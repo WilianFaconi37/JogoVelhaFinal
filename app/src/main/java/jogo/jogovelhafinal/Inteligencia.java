@@ -6,8 +6,6 @@
 
 package jogo.jogovelhafinal;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Chan
@@ -33,6 +31,8 @@ public class Inteligencia {
     public void set(int linha, int coluna, int jogador){
         board[linha][coluna] = jogador;
         numJogada++;
+        if(jogadorAtual == JOGADOR_BATATEIRO) jogadorAtual = JOGADOR_COMPUTADOR;
+        if(jogadorAtual == JOGADOR_COMPUTADOR) jogadorAtual = JOGADOR_BATATEIRO;
     }
     
     
@@ -174,53 +174,165 @@ public class Inteligencia {
     
     private void eliminaPerigoLinha(int linha){
         if(board[linha][0] == 0 ){
-            board[linha][0] = JOGADOR_COMPUTADOR;
-            numJogada++;
+            set(linha, 0, JOGADOR_COMPUTADOR);
         }
         if(board[linha][1] == 0 ){
-            board[linha][1] = JOGADOR_COMPUTADOR;
-            numJogada++;
+            set(linha, 1, JOGADOR_COMPUTADOR);
         }
         if(board[linha][2] == 0 ){
-            board[linha][2] = JOGADOR_COMPUTADOR;
-            numJogada++;
+            set(linha, 2, JOGADOR_COMPUTADOR);
         }
     }
     
     private void eliminaPerigoColuna(int coluna){
         if(board[0][coluna] == 0 ){
-            board[0][coluna] = JOGADOR_COMPUTADOR;
-            numJogada++;
+            set(0, coluna, JOGADOR_COMPUTADOR);
         }
         if(board[1][coluna] == 0 ){
-            board[1][coluna] = JOGADOR_COMPUTADOR;
-            numJogada++;
+            set(1, coluna, JOGADOR_COMPUTADOR);
         }
         if(board[2][coluna] == 0 ){
-            board[2][coluna] = JOGADOR_COMPUTADOR;
-            numJogada++;
+            set(2, coluna, JOGADOR_COMPUTADOR);
         }
     }
     
-    private void computerMove(){
+    
+    
+    /*
+     * Funções para ganhar o jogo
+    */
+    private boolean tentaGanhar(){
+        int quantidadeBatateiro = 0;
+        int quantidadeComputador = 0;
+        //Verifica linhas
+        for(int c1 = 0; c1 < 3; c1++){
+            quantidadeBatateiro = 0;
+            quantidadeComputador = 0;
+            for(int c2 = 0; c2 < 3; c2++){
+                if(board[c1][c2] == JOGADOR_BATATEIRO){
+                    quantidadeBatateiro++;
+                }
+                if(board[c1][c2] == JOGADOR_COMPUTADOR){
+                    quantidadeComputador++;
+                }
+            }
+            if(quantidadeBatateiro ==0 && quantidadeComputador == 2){
+                ganhaJogoLinha(c1);
+                return true;
+            }
+        }
+        
+        //Verifica linhas
+        for(int c1 = 0; c1 < 3; c1++){
+            quantidadeBatateiro = 0;
+            quantidadeComputador = 0;
+            for(int c2 = 0; c2 < 3; c2++){
+                if(board[c2][c1] == JOGADOR_BATATEIRO){
+                    quantidadeBatateiro++;
+                }
+                if(board[c2][c1] == JOGADOR_COMPUTADOR){
+                    quantidadeComputador++;
+                }
+            }
+            if(quantidadeBatateiro ==0 && quantidadeComputador == 2){
+                ganhaJogoColuna(c1);
+                return true;
+            }
+        }        
+        
+        //Verifica cruzados
+        
+        if(board[0][0] == JOGADOR_COMPUTADOR && board[1][1] == JOGADOR_COMPUTADOR && board[2][2] == 0){
+            set(2,2,JOGADOR_COMPUTADOR);
+            return true;
+        }
+        if(board[0][0] == JOGADOR_COMPUTADOR && board[1][1] == 0 && board[2][2] == JOGADOR_COMPUTADOR){
+            set(1,1,JOGADOR_COMPUTADOR);
+            return true;
+        }
+        if(board[0][0] == 0 && board[1][1] == JOGADOR_COMPUTADOR && board[2][2] == JOGADOR_COMPUTADOR){
+            set(0,0,JOGADOR_COMPUTADOR);
+            return true;
+        }
+        
+        if(board[0][2] == JOGADOR_COMPUTADOR && board[1][1] == JOGADOR_COMPUTADOR && board[2][0] == 0){
+            set(2,0,JOGADOR_COMPUTADOR);
+            return true;
+        }
+        if(board[0][2] == JOGADOR_COMPUTADOR && board[1][1] == 0 && board[2][0] == JOGADOR_COMPUTADOR){
+            set(1,1,JOGADOR_COMPUTADOR);
+            return true;
+        }
+        if(board[0][2] == 0 && board[1][1] == JOGADOR_COMPUTADOR && board[2][0] == JOGADOR_COMPUTADOR){
+            set(0,2,JOGADOR_COMPUTADOR);
+            return true;
+        }
+        
+        return false;
+    }
+    
+    private void ganhaJogoLinha(int linha){
+        if(board[linha][0] == 0 ){
+            set(linha, 0, JOGADOR_COMPUTADOR);
+        }
+        if(board[linha][1] == 0 ){
+            set(linha, 1, JOGADOR_COMPUTADOR);
+        }
+        if(board[linha][2] == 0 ){
+            set(linha, 2, JOGADOR_COMPUTADOR);
+        }
+    }
+    
+    private void ganhaJogoColuna(int coluna){
+        if(board[0][coluna] == 0 ){
+            set(0, coluna, JOGADOR_COMPUTADOR);
+        }
+        if(board[1][coluna] == 0 ){
+            set(1, coluna, JOGADOR_COMPUTADOR);
+        }
+        if(board[2][coluna] == 0 ){
+            set(2, coluna, JOGADOR_COMPUTADOR);
+        }
+    }
+    
+    private void jogaRandomico(){
+        for(int c1 = 0; c1 < 3; c1++){
+            for(int c2 = 0; c2 < 3; c2++){
+                if(board[c1][c2] == 0 ){
+                    set(c1, c2, JOGADOR_COMPUTADOR);
+                }
+            }
+        }
+    }
+    
+    public void computerMove(){
         
         if(numJogada == 1){
             if(board[1][1] == JOGADOR_BATATEIRO){
-                board[0][1] = JOGADOR_COMPUTADOR;
+                set(0, 0, JOGADOR_COMPUTADOR);
             }else{
-                board[1][1] = JOGADOR_COMPUTADOR;
+                set(1, 1, JOGADOR_COMPUTADOR);
             }
         }
         
-        if(numJogada >= 3){
-            if(! perigo()){
-                //TODO VERIFICAR SE PODE GANHAR EM UMA JOGADA (igual a função PERIGO(), mas ao contrário)
-                //Se não puder, jogar em um lugar randomico.
-                
-                numJogada++;
+        if(numJogada == 3){
+            if(board[0][0] == 0){
+                set(0, 0, JOGADOR_COMPUTADOR);
+            }else if(board[0][2] == 0){
+                set(0, 2, JOGADOR_COMPUTADOR);
+            }else if(board[2][0] == 0){
+                set(0, 2, JOGADOR_COMPUTADOR);
+            }else{
+                set(2, 2, JOGADOR_COMPUTADOR);
             }
         }
         
-        
+        if(numJogada > 3){
+            if(! tentaGanhar()){
+                if(! perigo()){
+                    jogaRandomico();
+                }
+            }
+        }
     }
 }
