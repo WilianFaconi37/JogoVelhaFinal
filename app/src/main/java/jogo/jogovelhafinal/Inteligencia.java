@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package jogo.jogovelhafinal;
+package velha;
 
 /**
  *
@@ -31,8 +31,11 @@ public class Inteligencia {
     public void set(int linha, int coluna, int jogador){
         board[linha][coluna] = jogador;
         numJogada++;
-        if(jogadorAtual == JOGADOR_BATATEIRO) jogadorAtual = JOGADOR_COMPUTADOR;
-        if(jogadorAtual == JOGADOR_COMPUTADOR) jogadorAtual = JOGADOR_BATATEIRO;
+        if(jogadorAtual == JOGADOR_BATATEIRO){
+            jogadorAtual = JOGADOR_COMPUTADOR;
+        }else{
+            jogadorAtual = JOGADOR_BATATEIRO;
+        }
     }
     
     
@@ -49,39 +52,44 @@ public class Inteligencia {
         numJogada = 0;
     }
     
-    private void checkBoard(){
+    public boolean checkBoard(){
         if(checkBoardForPlayer(JOGADOR_BATATEIRO)){
             System.out.println("BATATEIRO GANHOU !!!!");
+            return false;
             //TODO o que fazer aqui ??
         }else if(checkBoardForPlayer(JOGADOR_COMPUTADOR)){
             System.out.println("BATATEIRO PERDEU !!!!");
+            return false;
             //TODO o que fazer aqui ??
         }else if(checkDraw()){
             System.out.println("DEU BATATA VELHA!!!!");
+            return false;
             //TODO o que fazer aqui ??
         }
+        
+        return true;
     }
     
     private boolean checkBoardForPlayer(int jogador){
         
         //Verifica linhas
         for(int c1 = 0; c1 < 3; c1++){
-            if(board[c1][0] == JOGADOR_BATATEIRO && board[c1][1] == JOGADOR_BATATEIRO && board[c1][2] == JOGADOR_BATATEIRO){
+            if(board[c1][0] == jogador && board[c1][1] == jogador && board[c1][2] == jogador){
                 return true;
             }
         }
         //Verifica colunas
         for(int c1 = 0; c1 < 3; c1++){
-            if(board[0][c1] == JOGADOR_BATATEIRO && board[1][c1] == JOGADOR_BATATEIRO && board[2][c1] == JOGADOR_BATATEIRO){
+            if(board[0][c1] == jogador && board[1][c1] == jogador && board[2][c1] == jogador){
                 return true;
             }
         }
         
         //Verifica cruzados
-        if(board[0][0] == JOGADOR_BATATEIRO && board[1][1] == JOGADOR_BATATEIRO && board[2][2] == JOGADOR_BATATEIRO){
+        if(board[0][0] == jogador && board[1][1] == jogador && board[2][2] == jogador){
             return true;
         }
-        if(board[0][2] == JOGADOR_BATATEIRO && board[1][1] == JOGADOR_BATATEIRO && board[2][0] == JOGADOR_BATATEIRO){
+        if(board[0][2] == jogador && board[1][1] == jogador && board[2][0] == jogador){
             return true;
         }
         return false;
@@ -313,9 +321,7 @@ public class Inteligencia {
             }else{
                 set(1, 1, JOGADOR_COMPUTADOR);
             }
-        }
-        
-        if(numJogada == 3){
+        }else if(numJogada == 3){
             if(board[0][0] == 0){
                 set(0, 0, JOGADOR_COMPUTADOR);
             }else if(board[0][2] == 0){
@@ -325,14 +331,30 @@ public class Inteligencia {
             }else{
                 set(2, 2, JOGADOR_COMPUTADOR);
             }
-        }
-        
-        if(numJogada > 3){
+        }else if(numJogada > 3){
             if(! tentaGanhar()){
                 if(! perigo()){
                     jogaRandomico();
                 }
             }
         }
+    }
+    
+    
+    
+    /*
+    * GETTERS e SETTERS
+    */
+    
+    public int[][] getBoard(){
+        return this.board;
+    }
+    
+    public int getJogadorAtual(){
+        return this.jogadorAtual;
+    }
+    
+    public int getNumJogada(){
+        return this.numJogada;
     }
 }
