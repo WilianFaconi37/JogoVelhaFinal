@@ -1,4 +1,4 @@
-package jogo.jogovelhafinal;
+package com.example.wilian.jogovelha;
 
 import org.junit.Test;
 
