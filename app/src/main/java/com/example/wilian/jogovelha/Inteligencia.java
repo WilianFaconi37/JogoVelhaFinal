@@ -1,4 +1,5 @@
-package com.example.wilian.jogovelha;
+package velha;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,11 +28,17 @@ public class Inteligencia {
 
     private int numJogada;
     private int jogadorAtual;
+    private int jogadorInicial;
 
     public Inteligencia(){
-        // TODO configurar quem inicia na tela ??
+        jogadorInicial = JOGADOR_BATATEIRO;
         jogadorAtual = JOGADOR_BATATEIRO;
-
+        resetBoard();
+    }
+    
+    public Inteligencia(int jogadorInicial){
+        this.jogadorInicial = jogadorInicial;
+        jogadorAtual = jogadorInicial;
         resetBoard();
     }
 
@@ -58,7 +65,7 @@ public class Inteligencia {
         }
 
         numJogada = 0;
-        jogadorAtual = JOGADOR_BATATEIRO;
+        jogadorAtual = jogadorInicial;
     }
 
     public int checkBoard(){
@@ -329,26 +336,47 @@ public class Inteligencia {
     }
 
     public void computerMove(){
-
-        if(numJogada == 1){
+        
+        /*
+        * Se computador começou, jogada deve ser adiantada
+        */
+        int jogadaAtual = numJogada;
+        if (jogadorInicial == JOGADOR_COMPUTADOR) jogadaAtual++;
+        
+        if(jogadaAtual == 1){
             if(board[1][1] == JOGADOR_BATATEIRO){
                 set(0, 0, JOGADOR_COMPUTADOR);
             }else{
                 set(1, 1, JOGADOR_COMPUTADOR);
             }
-        }else if(numJogada == 3){
+        }else if(jogadaAtual == 3){
             if(! perigo()) {
-                if (board[0][0] == 0) {
-                    set(0, 0, JOGADOR_COMPUTADOR);
-                } else if (board[0][2] == 0) {
-                    set(0, 2, JOGADOR_COMPUTADOR);
-                } else if (board[2][0] == 0) {
-                    set(0, 2, JOGADOR_COMPUTADOR);
-                } else {
-                    set(2, 2, JOGADOR_COMPUTADOR);
+                
+                // Tenta escapar de Jogada em 'L' ou 'triângulo'
+                if((board[0][0] == JOGADOR_BATATEIRO && board[2][2] == JOGADOR_BATATEIRO)
+                        || (board[0][2] == JOGADOR_BATATEIRO && board[2][0] == JOGADOR_BATATEIRO)){
+                    if(board[1][0] == 0){
+                        set(1, 0, JOGADOR_COMPUTADOR);
+                    }else if(board[1][2] == 0){
+                        set(1, 2, JOGADOR_COMPUTADOR);
+                    }else if(board[0][1] == 0){
+                        set(0, 1, JOGADOR_COMPUTADOR);
+                    }else if(board[2][1] == 0){
+                        set(2, 1, JOGADOR_COMPUTADOR);
+                    }
+                }else{
+                    if (board[0][0] == 0) {
+                        set(0, 0, JOGADOR_COMPUTADOR);
+                    } else if (board[0][2] == 0) {
+                        set(0, 2, JOGADOR_COMPUTADOR);
+                    } else if (board[2][0] == 0) {
+                        set(0, 2, JOGADOR_COMPUTADOR);
+                    } else {
+                        set(2, 2, JOGADOR_COMPUTADOR);
+                    }
                 }
             }
-        }else if(numJogada > 3){
+        }else if(jogadaAtual > 3){
             if(! tentaGanhar()){
                 if(! perigo()){
                     jogaRandomico();
