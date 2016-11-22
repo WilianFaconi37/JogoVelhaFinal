@@ -9,13 +9,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#4E342E"
     tools:context="com.example.wilian.jogovelha.JogoVelha">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.48">
+        android:layout_weight="0.48"
+        android:background="#4E342E"
+        >
+
 
         <LinearLayout
             android:orientation="vertical"
@@ -24,13 +28,13 @@
             android:layout_weight="0.19">
 
             <TextView
-                android:text="Derrotas"
+                android:text="  Derrotas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView7" />
 
             <TextView
-                android:text="0"
+                android:text="  0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtDerrotas" />
@@ -73,222 +77,173 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtVitorias"
-                android:layout_weight="0.19" />
+                android:layout_weight="5.15" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/linearLayout"
-        android:layout_weight="3.45"
-        android:background="@drawable/fundo2">
+        android:layout_height="109dp"
+        android:layout_weight="3.50"
+        android:layout_marginBottom="50dp"
+        android:background="#4E342E">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.93">
+        <View
+            android:layout_width="330dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="120sp"
+            android:layout_marginLeft="10sp"
+            android:background="#a40404" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
 
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:id="@+id/a1"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="0.80"
-                    android:onClick="atualizarBotao"
-                    android:tag="1"
-                    android:clickable="true" />
+        <View
+            android:layout_width="330dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="255sp"
+            android:layout_marginLeft="10sp"
+            android:background="#a40404" />
 
-            </LinearLayout>
+        <View
+            android:layout_width="12dp"
+            android:layout_height="360dp"
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="110sp"
+            android:background="#a40404" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:weightSum="1">
+        <TextView
+            android:text=""
+            android:id="@+id/a1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.80"
+            android:onClick="atualizarBotao"
+            android:tag="1"
+            android:clickable="true"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="top|left" />
 
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:id="@+id/a2"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="match_parent"
-                    android:onClick="atualizarBotao"
-                    android:tag="2"
-                    android:clickable="true" />
+        <TextView
+            android:text=""
+            android:id="@+id/a2"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.80"
+            android:onClick="atualizarBotao"
+            android:tag="2"
+            android:clickable="true"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="top|center" />
 
-            </LinearLayout>
+        <TextView
+            android:id="@+id/a3"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.80"
+            android:clickable="true"
+            android:onClick="atualizarBotao"
+            android:tag="3"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="top|right" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:weightSum="1">
+        <TextView
+            android:text=""
+            android:id="@+id/b1"
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:id="@+id/a3"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="match_parent"
-                    android:clickable="true"
-                    android:onClick="atualizarBotao"
-                    android:tag="3"/>
-            </LinearLayout>
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.80"
+            android:clickable="true"
+            android:onClick="atualizarBotao"
+            android:tag="4"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="left|center" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.93">
+        <TextView
+            android:text=""
+            android:id="@+id/b2"
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.80"
+            android:clickable="true"
+            android:onClick="atualizarBotao"
+            android:tag="5"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center" />
 
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:id="@+id/b1"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="0.80"
-                    android:clickable="true"
-                    android:onClick="atualizarBotao"
-                    android:tag="4"/>
-            </LinearLayout>
+        <TextView
+            android:text=""
+            android:id="@+id/b3"
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:weightSum="1">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.80"
+            android:clickable="true"
+            android:onClick="atualizarBotao"
+            android:tag="6"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="right|center" />
 
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:id="@+id/b2"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="match_parent"
-                    android:clickable="true"
-                    android:onClick="atualizarBotao"
-                    android:tag="5"/>
-            </LinearLayout>
+        <TextView
+            android:text=""
+            android:id="@+id/c1"
+            android:layout_marginTop="280dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="0.80"
+            android:clickable="true"
+            android:onClick="atualizarBotao"
+            android:tag="7"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="left|end" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+        <TextView
+            android:text=""
+            android:id="@+id/c2"
+            android:layout_marginTop="280dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="130dp"
+            android:layout_weight="0.80"
+            android:clickable="true"
+            android:onClick="atualizarBotao"
+            android:tag="8"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="end" />
 
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:id="@+id/b3"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="0.80"
-                    android:clickable="true"
-                    android:onClick="atualizarBotao"
-                    android:tag="6"/>
-            </LinearLayout>
+        <TextView
+            android:text=""
+            android:id="@+id/c3"
+            android:layout_marginTop="280dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.80"
+            android:clickable="true"
+            android:onClick="atualizarBotao"
+            android:tag="9"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="right|end" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.93">
+        <View
+            android:layout_width="12dp"
+            android:layout_height="360dp"
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="230dp"
+            android:background="#a40404"
+            android:id="@+id/view" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:id="@+id/c1"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="0.80"
-                    android:clickable="true"
-                    android:onClick="atualizarBotao"
-                    android:tag="7"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:weightSum="1">
-
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:id="@+id/c2"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="match_parent"
-                    android:clickable="true"
-                    android:onClick="atualizarBotao"
-                    android:tag="8"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <TextView
-                    android:text=""
-                    android:layout_width="match_parent"
-                    android:id="@+id/c3"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="0.80"
-                    android:clickable="true"
-                    android:onClick="atualizarBotao"
-                    android:tag="9"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>
