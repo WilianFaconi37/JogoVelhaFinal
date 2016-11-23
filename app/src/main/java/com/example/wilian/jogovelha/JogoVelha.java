@@ -1,5 +1,6 @@
 package com.example.wilian.jogovelha;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,13 @@ public class JogoVelha extends AppCompatActivity {
     Inteligencia inteligencia = new Inteligencia();
 
     TextView tv1, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9, txtDerrotas, txtEmpates, txtVitorias;
+
+    // Auth: Gabriel Andreatto
+    // date: 23/11/2016 03:07 am
+    // Usado para converter int para String enviada pelo metodo goShareResultGame()
+    String derrotas;
+    String empates;
+    String vitorias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -219,5 +227,25 @@ public class JogoVelha extends AppCompatActivity {
 
         inteligencia.resetBoard();
         desenhaTabuleiro();
+    }
+
+
+    // Auth: Gabriel Andreatto
+    // date: 23/11/2016 03:07 am
+    // Botao encerrar da activity
+    // este metodo chama a Activity Compartilhar resultados
+    // passando parametros do resultado final do Jogo
+    public void goShareResultGame( View view ) {
+        Intent intent = new Intent( this, ResultActivity.class );
+        intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK );
+
+        derrotas = String.valueOf( inteligencia.getQuantidadeDerrotas() );
+        empates = String.valueOf( inteligencia.getQuantidadeEmpates() );
+        vitorias = String.valueOf( inteligencia.getQuantidadeVitorias() );
+
+        intent.putExtra("derrotas", derrotas );
+        intent.putExtra("empates", empates );
+        intent.putExtra("vitorias", vitorias );
+        startActivity( intent );
     }
 }

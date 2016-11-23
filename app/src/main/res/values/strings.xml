@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">JogoVelha</string>
+    <string name="app_name">Jogo da Velha # - Sr Batata </string>
+
+    <string name="welcome">Bem Vindo ao Game do Sr. Batata !</string>
+
+    <string name="cancel_login">Login cancelado !</string>
+    <string name="error_login">Login Erro !</string>
+    <string name="logout">Sair !</string>
+
+    <string name="facebook_app_id">695219917298699</string>
 </resources>

@@ -117,7 +117,7 @@ public class ResultActivity extends AppCompatActivity {
             }
         };
     }
-    
+
 
     private void setDataUser() {
         //Profile profile = Profile.getCurrentProfile();
