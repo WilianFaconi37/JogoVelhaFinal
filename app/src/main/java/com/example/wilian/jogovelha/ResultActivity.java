@@ -33,6 +33,10 @@ public class ResultActivity extends AppCompatActivity {
     String vitorias;
     String resultado;
 
+    TextView txtDerrota;
+    TextView txtEmpate;
+    TextView txtVitoria;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,10 @@ public class ResultActivity extends AppCompatActivity {
         userName = (TextView) findViewById( R.id.textViewUserName );
         //shareButton = (ShareButton) findViewById( R.id.fb_share_button );
         buttonFbShr = ( Button ) findViewById( R.id.fb_share_button );
+        txtDerrota = ( TextView ) findViewById( R.id.textViewResDerrota );
+        txtEmpate = ( TextView ) findViewById( R.id.textViewResEmpate);
+        txtVitoria = ( TextView ) findViewById( R.id.textViewResVitoria );
+
 
         shareDialog = new ShareDialog(this);
 
@@ -51,12 +59,21 @@ public class ResultActivity extends AppCompatActivity {
             derrotas = result.getString( "derrotas" );
             empates = result.getString( "empates" );
             vitorias = result.getString( "vitorias" );
+
+
         }
 
         initFbData();
         setDataUser();
         fnctBtnShare();
+        setResPlacar( derrotas, empates, vitorias );
 
+    }
+
+    private void setResPlacar(String d, String e, String v) {
+        txtDerrota.setText( derrotas );
+        txtEmpate.setText( empates );
+        txtVitoria.setText( vitorias );
     }
 
     @Override
