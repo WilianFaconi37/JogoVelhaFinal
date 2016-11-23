@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Jogo da Velha # - Sr Batata </string>
 
-    <string name="welcome">Bem Vindo ao Game do Sr. Batata !</string>
+    <string name="welcome">Selecione quem começará o jogo:</string>
 
     <string name="cancel_login">Login cancelado !</string>
     <string name="error_login">Login Erro !</string>

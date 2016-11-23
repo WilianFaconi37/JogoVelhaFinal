@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.wilian.jogovelha.ResultActivity">
+    tools:context="com.example.wilian.jogovelha.ResultActivity"
+    android:background="@drawable/fundo1">
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,7 +39,7 @@
         android:layout_marginBottom="17dp" />
 
     <Button
-        android:text="Compartilhar"
+        android:text="Compartilhar no Facebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fb_share_button"
