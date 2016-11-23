@@ -9,7 +9,7 @@ import com.facebook.ProfileTracker;
 import com.facebook.appevents.AppEventsLogger;
 
 /**
- * Created by Andreatto on 23/11/16. Trabalho Pos graduacao
+ * Created by Andreatto on 23/11/16. Trabalho Pos graduacao 2016
  */
 
 public class FacebookData extends Application {
