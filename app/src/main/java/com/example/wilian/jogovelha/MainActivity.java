@@ -1,19 +1,39 @@
 package com.example.wilian.jogovelha;
 
+        import android.app.Activity;
+        import android.content.DialogInterface;
         import android.content.Intent;
+        import android.content.pm.PackageManager;
+        import android.graphics.Bitmap;
+        import android.graphics.drawable.Drawable;
+        import android.os.Environment;
+        import android.provider.MediaStore;
+        import android.support.v7.app.AlertDialog;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.View;
+        import android.widget.ImageView;
 
         import com.facebook.AccessToken;
         import com.facebook.login.LoginManager;
 
+        import java.io.ByteArrayOutputStream;
+        import java.io.File;
+        import java.io.FileNotFoundException;
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
         //Toast.makeText(getApplicationContext(), "Testando redirect ", Toast.LENGTH_SHORT).show();
         // verifica se user esta logado ou nao
@@ -53,5 +73,7 @@ public class MainActivity extends AppCompatActivity {
         LoginManager.getInstance().logOut();
         goLoginScreen();
     }
+
+
 
 }

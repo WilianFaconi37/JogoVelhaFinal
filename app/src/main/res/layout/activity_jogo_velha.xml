@@ -25,7 +25,8 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.19">
+            android:layout_weight="0.19"
+            android:background="#FF6E40">
 
             <TextView
                 android:text="Derrotas"
@@ -47,14 +48,16 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.19">
+            android:layout_weight="0.19"
+            android:background="#FF6E40">
 
             <TextView
                 android:text="Empates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/labelEmpates"
-                android:gravity="center" />
+                android:gravity="center"
+                />
 
             <TextView
                 android:text="0"
@@ -69,7 +72,8 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.19">
+            android:layout_weight="0.19"
+            android:background="#FF6E40">
 
             <TextView
                 android:text="Vitórias"
@@ -95,12 +99,20 @@
         android:layout_height="90dp"
         android:layout_weight="2.71"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/fundojogo">
+        android:layout_marginRight="0dp">
+
+        <View
+            android:layout_marginTop="10sp"
+            android:layout_width="360dp"
+            android:layout_height="330dp"
+            android:layout_weight="2.71"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/viewImage" />
 
         <View
             android:layout_width="330dp"
             android:layout_height="12dp"
-            android:layout_marginTop="120sp"
+            android:layout_marginTop="115sp"
             android:layout_marginLeft="10sp"
             android:background="#FF6E40" />
 
@@ -108,7 +120,7 @@
         <View
             android:layout_width="330dp"
             android:layout_height="12dp"
-            android:layout_marginTop="240sp"
+            android:layout_marginTop="235sp"
             android:layout_marginLeft="10sp"
             android:background="#FF6E40" />
 
@@ -116,7 +128,7 @@
             android:layout_width="12dp"
             android:layout_height="360dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="230dp"
+            android:layout_marginLeft="220dp"
             android:background="#FF6E40"
             android:id="@+id/view" />
 
@@ -130,70 +142,56 @@
         <TextView
             android:text=""
             android:id="@+id/a1"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="0.80"
             android:onClick="atualizarBotao"
             android:tag="1"
             android:clickable="true"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_gravity="top|left" />
 
         <TextView
             android:text=""
             android:id="@+id/a2"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="18dp"
             android:layout_marginRight="10dp"
             android:layout_weight="0.80"
             android:onClick="atualizarBotao"
             android:tag="2"
             android:clickable="true"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_gravity="top|center" />
 
         <TextView
             android:id="@+id/a3"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_weight="0.80"
             android:clickable="true"
             android:onClick="atualizarBotao"
             android:tag="3"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_gravity="top|right" />
 
         <TextView
             android:text=""
-            android:id="@+id/b2"
-
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.80"
-            android:clickable="true"
-            android:onClick="atualizarBotao"
-            android:tag="5"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_gravity="center" />
-
-        <TextView
-            android:text=""
             android:id="@+id/b3"
-
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="0.80"
             android:clickable="true"
             android:onClick="atualizarBotao"
             android:tag="6"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_gravity="right|center" />
 
         <TextView
@@ -206,22 +204,22 @@
             android:clickable="true"
             android:onClick="atualizarBotao"
             android:tag="8"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_gravity="end" />
 
         <TextView
             android:text=""
             android:id="@+id/b1"
-
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="0.80"
             android:clickable="true"
             android:onClick="atualizarBotao"
             android:tag="4"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_gravity="left|center" />
 
         <TextView
@@ -234,8 +232,8 @@
             android:clickable="true"
             android:onClick="atualizarBotao"
             android:tag="7"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_gravity="left|end" />
 
         <TextView
@@ -248,18 +246,42 @@
             android:clickable="true"
             android:onClick="atualizarBotao"
             android:tag="9"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_gravity="right|end" />
+
+        <TextView
+            android:text=""
+            android:id="@+id/b2"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.80"
+            android:clickable="true"
+            android:onClick="atualizarBotao"
+            android:tag="5"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center" />
+
 
     </FrameLayout>
 
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right|end"
+        android:background="@android:drawable/ic_menu_camera" />
+
     <Button
         android:text="Encerrar"
-        android:layout_width="263dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnEncerrar"
         android:onClick="goShareResultGame"
         android:background="#FF6E40"/>
+
 
 </LinearLayout>

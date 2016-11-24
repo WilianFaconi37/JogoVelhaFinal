@@ -11,13 +11,98 @@
     tools:context="com.example.wilian.jogovelha.ResultActivity"
     android:background="@drawable/fundo1">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/textViewUserName">
+
+        <com.facebook.login.widget.ProfilePictureView
+            android:id="@+id/profilePicture"
+
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/textViewUserName" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textViewUserName"
+        android:layout_above="@+id/fb_share_button">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="20dp">
+
+            <TextView
+                android:text="Vitórias:"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:id="@+id/textView6" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:id="@+id/textViewResVitoria" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="20dp">
+
+            <TextView
+                android:text="Empates:"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:id="@+id/textView5"
+                />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:id="@+id/textViewResEmpate"
+                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="20dp">
+
+            <TextView
+                android:text="Derrotas:"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:id="@+id/textView4"
+                />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:id="@+id/textViewResDerrota"
+                 />
+        </LinearLayout>
+    </LinearLayout>
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/textViewUserName"
-        android:textSize="24sp" />
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:textAlignment="center" />
 
     <Button
         android:onClick="redirecionar"
@@ -30,21 +115,13 @@
         android:layout_toStartOf="@+id/textViewUserName"
         android:layout_alignParentEnd="true" />
 
-    <com.facebook.login.widget.ProfilePictureView
-        android:id="@+id/profilePicture"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_alignBottom="@+id/textViewUserName"
-        android:layout_alignEnd="@+id/textViewUserName"
-        android:layout_marginBottom="17dp" />
-
     <Button
         android:text="Compartilhar no Facebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fb_share_button"
+        android:layout_marginBottom="15dp"
         android:layout_above="@+id/button3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="43dp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

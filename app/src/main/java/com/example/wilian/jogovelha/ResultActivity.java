@@ -42,6 +42,7 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+
         callbackManager = CallbackManager.Factory.create();
 
         userName = (TextView) findViewById( R.id.textViewUserName );
@@ -53,13 +54,11 @@ public class ResultActivity extends AppCompatActivity {
 
 
         shareDialog = new ShareDialog(this);
-
         Bundle result = getIntent().getExtras();
         if( result != null ) {
             derrotas = result.getString( "derrotas" );
             empates = result.getString( "empates" );
             vitorias = result.getString( "vitorias" );
-
 
         }
 
@@ -68,9 +67,11 @@ public class ResultActivity extends AppCompatActivity {
         fnctBtnShare();
         setResPlacar( derrotas, empates, vitorias );
 
+
     }
 
     private void setResPlacar(String d, String e, String v) {
+
         txtDerrota.setText( derrotas );
         txtEmpate.setText( empates );
         txtVitoria.setText( vitorias );
@@ -100,7 +101,7 @@ public class ResultActivity extends AppCompatActivity {
                             .setContentDescription(Profile.getCurrentProfile().getFirstName()
                                     + " estava jogando o "
                                     + "\n  Jogo da Velha do Sr. Batata "
-                                    + "\n  Placar: D: " + derrotas + " E: " + empates + " V: " + vitorias )
+                                    + "\n  Placar: Derrota: " + derrotas + " Empate: " + empates + " Vitoria: " + vitorias )
                             .build();
                     //buttonFbShr.setShareContent(content);
                     shareDialog.show(content);
@@ -146,13 +147,17 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void redirecionar(View view) {
+
         goMainScreen();
+
     }
 
     private void goMainScreen() {
         Intent intent = new Intent( this, MainActivity.class );
         intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK );
+
         startActivity( intent );
+
     }
 
     // Inserir novos metodos abaixo PLS 4x0
