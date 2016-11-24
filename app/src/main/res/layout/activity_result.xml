@@ -11,6 +11,16 @@
     tools:context="com.example.wilian.jogovelha.ResultActivity"
     android:background="@drawable/fundo1">
 
+    <com.facebook.login.widget.ProfilePictureView
+        android:id="@+id/profilePicture"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_alignBottom="@+id/textViewUserName"
+        android:layout_alignEnd="@+id/textViewUserName"
+        android:layout_marginBottom="17dp" >
+
+    </com.facebook.login.widget.ProfilePictureView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,6 +28,81 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/textViewUserName"
         android:textSize="24sp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/profilePicture"
+        android:layout_above="@+id/fb_share_button">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="29dp">
+
+            <TextView
+                android:text="Derrota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDerrota"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewResDerrota"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="37dp">
+
+            <TextView
+                android:text="Empate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewEmpate"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewResEmpate"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Vitoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewResVitoria"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:text="Compartilhar no Facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fb_share_button"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp" />
 
     <Button
         android:onClick="redirecionar"
@@ -29,22 +114,5 @@
         android:id="@+id/button3"
         android:layout_toStartOf="@+id/textViewUserName"
         android:layout_alignParentEnd="true" />
-
-    <com.facebook.login.widget.ProfilePictureView
-        android:id="@+id/profilePicture"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_alignBottom="@+id/textViewUserName"
-        android:layout_alignEnd="@+id/textViewUserName"
-        android:layout_marginBottom="17dp" />
-
-    <Button
-        android:text="Compartilhar no Facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fb_share_button"
-        android:layout_above="@+id/button3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="43dp" />
 
 </RelativeLayout>
