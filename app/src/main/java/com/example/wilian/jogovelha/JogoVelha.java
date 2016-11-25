@@ -49,6 +49,7 @@ public class JogoVelha extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_jogo_velha);
+
         tv1 = (TextView) findViewById(R.id.a1);
         tv2 = (TextView) findViewById(R.id.a2);
         tv3 = (TextView) findViewById(R.id.a3);
@@ -58,12 +59,9 @@ public class JogoVelha extends AppCompatActivity {
         tv7 = (TextView) findViewById(R.id.c1);
         tv8 = (TextView) findViewById(R.id.c2);
         tv9 = (TextView) findViewById(R.id.c3);
-
         txtDerrotas = (TextView) findViewById(R.id.txtDerrotas);
         txtEmpates = (TextView) findViewById(R.id.txtEmpates);
         txtVitorias = (TextView) findViewById(R.id.txtVitorias);
-
-
         ivImage = (ImageView) findViewById(R.id.ivImage);
         viewImage = (View) findViewById(R.id.viewImage);
         ivImage.setOnClickListener(new View.OnClickListener() {
@@ -300,7 +298,7 @@ public class JogoVelha extends AppCompatActivity {
     }
 
     private void selectImage() {
-        final CharSequence[] items = { "Tirar Foto", "Escolher na galeria" };
+        final CharSequence[] items = { "Tirar Foto"/*, "Escolher na galeria" */};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(JogoVelha.this);
         builder.setItems(items, new DialogInterface.OnClickListener() {
@@ -313,12 +311,12 @@ public class JogoVelha extends AppCompatActivity {
                     if(result)
                         cameraIntent();
 
-                } else if (items[item].equals("Escolher na galeria")) {
+                }/* else if (items[item].equals("Escolher na galeria")) {
                     userChoosenTask ="Escolher na galeria";
                     if(result)
                         galleryIntent();
 
-                }
+                }*/
             }
         });
         builder.show();
