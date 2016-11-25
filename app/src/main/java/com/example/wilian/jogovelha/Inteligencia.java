@@ -341,6 +341,7 @@ public class Inteligencia {
         * Se computador começou, jogada deve ser adiantada
         */
         int jogadaAtual = numJogada;
+
         if (jogadorInicial == JOGADOR_COMPUTADOR) jogadaAtual++;
         
         if(jogadaAtual == 1){

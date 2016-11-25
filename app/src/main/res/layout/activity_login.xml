@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -17,8 +18,45 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginEnd="77dp"
-        android:layout_marginTop="207dp"
+        android:layout_marginTop="260dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/srabatata"
+            android:layout_marginTop="50dp"
+            android:id="@+id/imageView3"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/srbatata"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:id="@+id/imageView2"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:text="      Não se preocupe : Nenhum dado será divulgado e nada será postado em sua timeline sem a sua permissão."
+        android:layout_width="360dp"
+        android:layout_height="110dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"
+        android:id="@+id/textView3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="textStart" />
 
 </RelativeLayout>

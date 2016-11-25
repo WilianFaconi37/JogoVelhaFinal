@@ -79,6 +79,7 @@ public class JogoVelha extends AppCompatActivity {
         int qual = Integer.parseInt(view.getTag().toString());
         int resultado = 0;
 
+
         switch(qual){
             case 1:
 
@@ -183,8 +184,10 @@ public class JogoVelha extends AppCompatActivity {
 
         if(resultado != 0){
             restart(resultado);
+
         }else {
             if(inteligencia.getJogadorAtual() == Inteligencia.JOGADOR_COMPUTADOR){
+
 //                try{
 //                    Thread.sleep(1000);
 //                }catch (InterruptedException e){
