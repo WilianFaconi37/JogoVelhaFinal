@@ -48,9 +48,7 @@
         android:layout_above="@+id/button3"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
-        android:textStyle="normal|bold"
-        android:elevation="10000000dp"
-        />
+        android:textStyle="normal|bold"/>
 
     <Button
         android:onClick="redirecionar"
@@ -62,8 +60,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:textColor="@android:color/white"
-        android:textStyle="normal|bold"
-        android:elevation="10000000dp"/>
+        android:textStyle="normal|bold"/>
 
     <LinearLayout
         android:orientation="vertical"

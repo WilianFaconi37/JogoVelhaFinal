@@ -18,7 +18,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.48"
         android:background="@drawable/fundo1"
-        android:elevation="10000dp" >
+        >
 
 
         <LinearLayout
@@ -127,7 +127,7 @@
             android:layout_marginTop="115sp"
             android:layout_marginLeft="10sp"
             android:background="#FF6E40"
-            android:elevation="10000dp"/>
+            />
 
 
         <View
@@ -143,16 +143,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="220dp"
             android:background="#FF6E40"
-            android:id="@+id/view"
-            android:elevation="10000dp"/>
+            android:id="@+id/view"/>
 
         <View
             android:layout_width="12dp"
             android:layout_height="360dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="110sp"
-            android:background="#FF6E40"
-            android:elevation="10000dp"/>
+            android:background="#FF6E40" />
 
         <TextView
             android:text=""
@@ -288,8 +286,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="right|end"
-        android:background="@android:drawable/ic_menu_camera"
-        android:elevation="10000dp"/>
+        android:background="@android:drawable/ic_menu_camera"/>
 
     <Button
         android:text="Encerrar"
@@ -299,8 +296,7 @@
         android:onClick="goShareResultGame"
         android:textColor="@android:color/white"
         android:background="#FF6E40"
-        android:textStyle="normal|bold"
-        android:elevation="10000dp" />
+        android:textStyle="normal|bold"/>
 
 
 </LinearLayout>
