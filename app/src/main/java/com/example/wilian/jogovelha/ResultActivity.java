@@ -96,12 +96,11 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (ShareDialog.canShow(ShareLinkContent.class)) {
                     ShareLinkContent content = new ShareLinkContent.Builder()
-                            .setContentUrl(Uri.parse("https://developers.facebook.com/android"))
+                            .setContentUrl(Uri.parse("https://developers.facebook.com"))
+                            //®.setContentUrl(Uri.parse("https://www.facebook.com/Sr-Batata-Jogo-da-Velha-1633334963352758/") )
                             .setContentTitle("Jogo da Velha # - Sr Batata ")
-                            .setContentDescription(Profile.getCurrentProfile().getFirstName()
-                                    + " estava jogando o "
-                                    + "\n  Jogo da Velha do Sr. Batata "
-                                    + "\n  Placar: Derrota: " + derrotas + " Empate: " + empates + " Vitoria: " + vitorias )
+                            .setImageUrl( Uri.parse("http://nteck.com.br/projeto/logoJogo.png") )
+                            .setContentDescription("Placar: Derrota: " + derrotas + " Empate: " + empates + " Vitoria: " + vitorias )
                             .build();
                     //buttonFbShr.setShareContent(content);
                     shareDialog.show(content);
