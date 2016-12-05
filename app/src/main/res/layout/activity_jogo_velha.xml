@@ -280,23 +280,39 @@
 
     </FrameLayout>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="400dp"
+        android:layout_height="70dp">
 
-    <ImageView
-        android:id="@+id/ivImage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="right|end"
-        android:background="@android:drawable/ic_menu_camera"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:text="Encerrar"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnEncerrar"
-        android:onClick="goShareResultGame"
-        android:textColor="@android:color/white"
-        android:background="#FF6E40"
-        android:textStyle="normal|bold"/>
+            <Button
+                android:text="Encerrar"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnEncerrar"
+                android:onClick="goShareResultGame"
+                android:textColor="@android:color/white"
+                android:background="#FF6E40"
+                android:textStyle="normal|bold"
+                android:layout_weight="1.16" />
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right|end"
+                android:layout_marginRight="70dp"
+                android:layout_marginLeft="15dp"
+                android:background="@android:drawable/ic_menu_camera"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </LinearLayout>
