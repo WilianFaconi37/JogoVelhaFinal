@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -49,6 +50,21 @@ public class JogoVelha extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_jogo_velha);
+        TextView txt = (TextView) findViewById(R.id.txtDerrotas);
+        TextView txt1 = (TextView) findViewById(R.id.txtEmpates);
+        TextView txt2 = (TextView) findViewById(R.id.txtVitorias);
+        TextView txt3 = (TextView) findViewById(R.id.labelDerrotas);
+        TextView txt4 = (TextView) findViewById(R.id.labelEmpates);
+        TextView txt5 = (TextView) findViewById(R.id.labelVitorias);
+        TextView txt6 = (TextView) findViewById(R.id.btnEncerrar);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Light.ttf");
+        txt.setTypeface(font);
+        txt1.setTypeface(font);
+        txt2.setTypeface(font);
+        txt3.setTypeface(font);
+        txt4.setTypeface(font);
+        txt5.setTypeface(font);
+        txt6.setTypeface(font);
 
         tv1 = (TextView) findViewById(R.id.a1);
         tv2 = (TextView) findViewById(R.id.a2);
@@ -286,6 +302,7 @@ public class JogoVelha extends AppCompatActivity {
 
 
     //Api Camera
+    //Valida as permissoes do usuario
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
@@ -299,7 +316,7 @@ public class JogoVelha extends AppCompatActivity {
                 break;
         }
     }
-
+    // Chama a tela para selecionar se deseja Tirar Foto ou Escolher uma foto na Galeria
     private void selectImage() {
         final CharSequence[] items = { "Tirar Foto"/*, "Escolher na galeria" */};
 
@@ -324,7 +341,7 @@ public class JogoVelha extends AppCompatActivity {
         });
         builder.show();
     }
-
+    //Seleciona um arquivo na galeria
     private void galleryIntent()
     {
         Intent intent = new Intent();
@@ -332,7 +349,7 @@ public class JogoVelha extends AppCompatActivity {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Selecione o Arquivo"),SELECT_FILE);
     }
-
+    //Tira a foto da camera
     private void cameraIntent()
     {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -350,7 +367,7 @@ public class JogoVelha extends AppCompatActivity {
                 onCaptureImageResult(data);
         }
     }
-
+    //Captura a imagem que foi tirada e apresenta na tela
     private void onCaptureImageResult(Intent data) {
         Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -373,7 +390,7 @@ public class JogoVelha extends AppCompatActivity {
 
         viewImage.setBackground(Drawable.createFromPath(destination.getPath()) );
     }
-
+    //Captura da galeria e apresenta na tela
     private void onSelectFromGalleryResult(Intent data) {
 
         Bitmap bm=null;

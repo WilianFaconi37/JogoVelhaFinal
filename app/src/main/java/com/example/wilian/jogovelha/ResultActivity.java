@@ -1,6 +1,7 @@
 package com.example.wilian.jogovelha;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,6 +42,19 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        TextView txt =  (TextView) findViewById(R.id.textView6);
+        TextView txt1 = (TextView) findViewById(R.id.textView5);
+        TextView txt2 = (TextView) findViewById(R.id.textView4);
+        TextView txt3 = (TextView) findViewById(R.id.textViewResVitoria);
+        TextView txt4 = (TextView) findViewById(R.id.textViewResEmpate);
+        TextView txt5 = (TextView) findViewById(R.id.textViewResDerrota);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Black.ttf");
+        txt.setTypeface(font);
+        txt1.setTypeface(font);
+        txt2.setTypeface(font);
+        txt3.setTypeface(font);
+        txt4.setTypeface(font);
+        txt5.setTypeface(font);
 
 
         callbackManager = CallbackManager.Factory.create();

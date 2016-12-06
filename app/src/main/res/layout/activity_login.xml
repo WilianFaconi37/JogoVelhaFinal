@@ -14,11 +14,10 @@
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
-        android:layout_width="400dp"
+        android:layout_width="410dp"
         android:layout_height="150dp"
         android:layout_gravity="center_horizontal"
-
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="300dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
@@ -50,13 +49,13 @@
     <TextView
         android:text="      Não se preocupe : Nenhum dado será divulgado e nada será postado em sua timeline sem a sua permissão."
         android:layout_width="360dp"
-        android:layout_height="110dp"
-        android:textSize="14sp"
+        android:layout_height="150dp"
+        android:textSize="12sp"
         android:textColor="@android:color/white"
         android:textStyle="normal|bold"
-        android:id="@+id/textView3"
+        android:id="@+id/texto_fonte"
+        android:textAlignment="textStart"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="textStart" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

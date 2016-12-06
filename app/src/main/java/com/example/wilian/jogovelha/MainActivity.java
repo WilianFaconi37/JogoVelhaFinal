@@ -5,6 +5,7 @@ package com.example.wilian.jogovelha;
         import android.content.Intent;
         import android.content.pm.PackageManager;
         import android.graphics.Bitmap;
+        import android.graphics.Typeface;
         import android.graphics.drawable.Drawable;
         import android.os.Environment;
         import android.provider.MediaStore;
@@ -13,6 +14,7 @@ package com.example.wilian.jogovelha;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.ImageView;
+        import android.widget.TextView;
 
         import com.facebook.AccessToken;
         import com.facebook.login.LoginManager;
@@ -31,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView txt = (TextView) findViewById(R.id.radioButton);
+        TextView txt2 = (TextView) findViewById(R.id.radioButton2);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Light.ttf");
+        txt.setTypeface(font);
+        txt2.setTypeface(font);
+        TextView txt3 = (TextView) findViewById(R.id.textView);
+        Typeface font2 = Typeface.createFromAsset(getAssets(), "Roboto-Black.ttf");
+        txt3.setTypeface(font2);
 
 
 

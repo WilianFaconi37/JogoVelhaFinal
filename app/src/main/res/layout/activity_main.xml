@@ -60,7 +60,12 @@
         android:textStyle="normal|bold"
         android:id="@+id/textView"
         android:layout_below="@+id/button4"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:shadowColor="#9E9E9E"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="1.2"
+        />
 
     <RadioGroup
         android:layout_width="220dp"
@@ -82,7 +87,12 @@
             android:textStyle="normal|bold"
             android:textSize="20sp"
             android:layout_weight="1"
-            android:checked="true" />
+            android:checked="true"
+            android:shadowColor="#9E9E9E"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1.2"
+            />
 
         <RadioButton
             android:text="Computador"
@@ -94,7 +104,12 @@
             android:buttonTint="@android:color/white"
             android:textColor="@android:color/white"
             android:textStyle="normal|bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:shadowColor="#9E9E9E"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1.2"
+            />
     </RadioGroup>
 
 </RelativeLayout>

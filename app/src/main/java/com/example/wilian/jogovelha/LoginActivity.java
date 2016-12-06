@@ -1,6 +1,7 @@
 package com.example.wilian.jogovelha;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -22,6 +23,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        TextView txt = (TextView) findViewById(R.id.texto_fonte);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Light.ttf");
+        txt.setTypeface(font);
 
         callbackManager = CallbackManager.Factory.create();
 

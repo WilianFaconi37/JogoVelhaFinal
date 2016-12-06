@@ -24,20 +24,9 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/textViewUserName" />
+            android:layout_toStartOf="@+id/textViewUserName"
+            />
     </FrameLayout>
-
-    <TextView
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textViewUserName"
-        android:layout_gravity="center"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textStyle="normal|bold"/>
 
     <Button
         android:text="Compartilhar no Facebook"
@@ -48,7 +37,10 @@
         android:layout_above="@+id/button3"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
-        android:textStyle="normal|bold"/>
+        android:textStyle="normal|bold"
+        android:elevation="10sp"
+        android:contextClickable="false"
+        android:clickable="false" />
 
     <Button
         android:onClick="redirecionar"
@@ -61,15 +53,22 @@
         android:textColor="@android:color/white"
         android:textStyle="normal|bold"
         android:gravity="bottom|left"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:elevation="10sp" />
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginLeft="30dp"
+        android:textAlignment="gravity"
+        android:elevation="10dp"
         android:layout_below="@+id/textViewUserName"
-        android:layout_alignStart="@+id/textViewUserName"
-        android:textAlignment="gravity">
+        android:layout_alignEnd="@+id/fb_share_button"
+        android:layout_marginEnd="16dp">
+
+
 
         <LinearLayout
             android:orientation="horizontal"
@@ -83,7 +82,11 @@
                 android:layout_height="20dp"
                 android:id="@+id/textView6"
                 android:textColor="@android:color/white"
-                android:textStyle="normal|bold"/>
+                android:textStyle="normal|bold"
+                android:shadowColor="#9E9E9E"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.2"/>
 
             <TextView
                 android:text="TextView"
@@ -92,6 +95,10 @@
                 android:id="@+id/textViewResVitoria"
                 android:textColor="@android:color/white"
                 android:textStyle="normal|bold"
+                android:shadowColor="#9E9E9E"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.2"
                />
         </LinearLayout>
 
@@ -107,7 +114,11 @@
                 android:layout_height="20dp"
                 android:id="@+id/textView5"
                 android:textColor="@android:color/white"
-                android:textStyle="normal|bold"/>
+                android:textStyle="normal|bold"
+                android:shadowColor="#9E9E9E"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.2"/>
 
             <TextView
                 android:text="TextView"
@@ -116,6 +127,10 @@
                 android:id="@+id/textViewResEmpate"
                 android:textColor="@android:color/white"
                 android:textStyle="normal|bold"
+                android:shadowColor="#9E9E9E"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.2"
                  />
 
         </LinearLayout>
@@ -133,6 +148,11 @@
                 android:id="@+id/textView4"
                 android:textColor="@android:color/white"
                 android:textStyle="normal|bold"
+                android:shadowColor="#9E9E9E"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.2"
+
                 />
 
             <TextView
@@ -141,8 +161,29 @@
                 android:layout_height="20dp"
                 android:id="@+id/textViewResDerrota"
                 android:textColor="@android:color/white"
-                android:textStyle="normal|bold"/>
+                android:textStyle="normal|bold"
+                android:shadowColor="#9E9E9E"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.2"/>
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:id="@+id/textViewUserName"
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"
+        android:shadowColor="#9E9E9E"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="1.2"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>
